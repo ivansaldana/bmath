@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<link rel="stylesheet" href="../styles/main.css">
 </head>
-<style>
-    .to-one{
-        border:1px solid green;
-        margin: 1em;
-        background-color: yellow;
-    }
-</style>
+
 <body>
-   <div class="hero">
-       <h1 class="titel">Regel van 3 (rechtevenredig).</h1>
-       <h3>Vul de twee bovenste velden en een van de onderste in.</h3>
-       <h4>De vierde waarde wordt berekend.
-</h4>
-   </div> 
-   <div class="container">
-       <div class="rij1">
-           <input type="text" name="w1" id="w1">
-           <span class="t1">komt overeen met</span>
-           <input type="text" name="w2" id="w2">
-       </div>
-       <div class="tussen">
-           <span class="one">1</span>
-           <span class="t1">komt overeen met <em class="deel"></em></span>
-           <span class="to-one"></span>
-       </div>
-       <div class="rij2">
+    <div class="hero">
+        <h1 class="titel">Regel van 3 (rechtevenredig).</h1>
+        <h3>Vul de twee bovenste velden en een van de onderste in.</h3>
+        <h4>De vierde waarde wordt berekend.
+        </h4>
+    </div>
+    <div class="container">
+        <div class="rij1i block">
+            <input type="text" name="w1" id="w1" inputmode="numeric" pattern="[0-9]*">
+            <span class="t1">komt overeen met</span>
+            <input type="text" name="w2" id="w2" inputmode="numeric" pattern="[0-9]*">
 
-           <input type="text" name="w3" id="w3">
-           <span class="t1">komt overeen met</span>
-           <input type="text" name="w4" id="w4" placeholder="Niet invullen">
-       </div>
-       <div class="actions">
-           <button type="submit" class="bereken">berekenen</button>
+        </div>
+        <div class="tussen block">
+            <span class="one">1</span>
+            <span class="t1">komt overeen met <em class="deel"></em></span>
+            <span class="to-one"></span>
+        </div>
+        <div class="rij2 block">
 
-           <button type="reset" class="cancel">wissen</button>
-       </div>
-   </div>
+            <input type="text" name="w3" id="w3" inputmode="numeric" pattern="[0-9]*">
+
+            <span class="t1">komt overeen met</span>
+            <input type="text" name="w4" id="w4" placeholder="Niet invullen" inputmode="numeric" pattern="[0-9]*">
+
+        </div>
+        <div class="actions ">
+            <button type="submit" class="bereken">berekenen</button>
+
+            <button type="reset" class="cancel">wissen</button>
+        </div>
+    </div>
 </body>
+
 </html>
-       </div>
-   </div>
-   <script src="js/r3.js"></script>
+</div>
+</div>
+<script src="js/r3.js"></script>
 </body>
+
 </html>

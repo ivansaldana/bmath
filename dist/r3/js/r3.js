@@ -42,7 +42,7 @@ r3.btn_calc.addEventListener('click', (e) => {
        tss=komma(b/a);
        res= komma((c*b)/a);
         
-       r3.to_one.innerHTML=tss;
+       r3.to_one.innerHTML=' = '+tss;
        r3.deel.innerHTML=deel;
        r3.w4.value=res;
 
