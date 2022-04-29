@@ -6,24 +6,23 @@ const r3 = {
     btn_calc: document.querySelector('.bereken'),
     btn_wis: document.querySelector('.cancel'),
 
-    deel:document.querySelector('.deel'),
+    deel: document.querySelector('.deel'),
 
-    to_one:document.querySelector('.to-one'),
-
-
+    to_one: document.querySelector('.to-one'),
+    tss_blok: document.querySelector('.tussen')
 }
 
 r3.btn_calc.addEventListener('click', (e) => {
     e.preventDefault();
-    let tss=0;
-    let res=0;
-    let deel='';
+    let tss = 0;
+    let res = 0;
+    let deel = '';
 
     let a = r3.w1.value;
     let b = r3.w2.value;
     let c = r3.w3.value;
     let d = r3.w4.value;
-  
+
 
     let w1 = (a == '') ? 0 : 1;
     let w2 = (b == '') ? 0 : 1;
@@ -32,26 +31,51 @@ r3.btn_calc.addEventListener('click', (e) => {
 
     if ((w1 + w2 + w3 + w4) < 3) {
         console.log('Er moeten 3 waarden ingevuld worden!!')
-    }else{
-      a=(a == '')?1:a;
-      b=(b == '')?1:b;
-      c=(c == '')?1:c;
-      d=(d == '')?1:d;
-     
-       deel=b +' : ' + a;
-       tss=komma(b/a);
-       res= komma((c*b)/a);
-        
-       r3.to_one.innerHTML=' = '+tss;
-       r3.deel.innerHTML=deel;
-       r3.w4.value=res;
+    } else {
+        a = (a == '') ? 1 : a;
+        b = (b == '') ? 1 : b;
+        c = (c == '') ? 1 : c;
+        d = (d == '') ? 1 : d;
 
-     
+        deel = b + ' : ' + a;
+        tss = komma(b / a);
+        res = komma((c * b) / a);
+
+        r3.to_one.innerHTML = ' = ' + tss;
+        r3.deel.innerHTML = deel;
+        r3.w4.value = res;
+
+
 
     }
-
 });
+// EVENT INVULLEN
+r3.w2.addEventListener('change', function () {
+    let a = r3.w1.value;
+    let b = r3.w2.value;
+    if (a == '') {
+        alert('vergeet niet om de eerste waarde in te vullen');
+        return;
+    }
+    let tss = komma(b / a);
+    let deel=b+ ' : '+a;
+    r3.deel.innerHTML=deel;
+    r3.to_one.innerHTML = ' = ' + tss;
+    r3.tss_blok.style.display = 'block';
 
-const komma=function(getal){
-return(Math.round (getal*100) / 100)
+})
+
+//  HULPFUNCTIE
+const komma = function (getal) {
+    return (Math.round(getal * 100) / 100)
 }
+// WISSEN
+r3.btn_wis.addEventListener('click',(e)=>{
+    e.preventDefault();
+    r3.w1.value='';
+    r3.w2.value='';
+    r3.w3.value='';
+    r3.w4.value='';
+    r3.tss_blok.style.display='none';
+
+})
